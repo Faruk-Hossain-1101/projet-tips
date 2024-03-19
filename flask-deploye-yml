@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to AWS EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.AWS_EC2_HOST }}
+        username: ${{ secrets.AWS_EC2_USERNAME }}
+        key: ${{ secrets.EC2_PRIVATE_KEY }}
+        script: |
+          cd ~/backend/backend
+          git fetch --all
+          git reset --hard origin/main
+          source venv/bin/activate
+          pip install -r requirements.txt
+          sudo systemctl restart doule-app
