@@ -57,10 +57,11 @@ server {
         proxy_redirect off;
     }
 }
+```
+
 ### Genarate Symbolink Link
 ```
 sudo ln -s /etc/nginx/sites-available/flask_app /etc/nginx/sites-enabled/ 
-```
 ```
 ### INSTALL AND SETUP GUNICORN
 ```
