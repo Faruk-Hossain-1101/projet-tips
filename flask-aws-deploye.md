@@ -43,8 +43,7 @@ sudo apt-get install libmysqlclient-dev
 ### INSTALL NGINX AND SETUP
 ```
 sudo apt-get install nginx
-sudo nano /etc/nginx/sites-available/flask_app <!-- To create a ngnix config file -->
-sudo ln -s /etc/nginx/sites-available/flask_app /etc/nginx/sites-enabled/  <!-- To create a symbolic link -->
+sudo nano /etc/nginx/sites-available/flask_app 
 ```
 ### FILE CONTENT
 ```
@@ -58,6 +57,10 @@ server {
         proxy_redirect off;
     }
 }
+### Genarate Symbolink Link
+```
+sudo ln -s /etc/nginx/sites-available/flask_app /etc/nginx/sites-enabled/ 
+```
 ```
 ### INSTALL AND SETUP GUNICORN
 ```
