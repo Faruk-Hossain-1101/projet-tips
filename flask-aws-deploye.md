@@ -39,6 +39,9 @@ pip install -r requirements.txt
 ```
 sudo apt-get install pkg-config
 sudo apt-get install libmysqlclient-dev
+## For Django
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+
 ```
 ### INSTALL NGINX AND SETUP
 ```
