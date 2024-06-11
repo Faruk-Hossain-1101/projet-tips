@@ -147,4 +147,9 @@ server {
 }
 ```
 
+### Nginx restart
+```
+sudo systemctl restart nginx
+```
+
 
