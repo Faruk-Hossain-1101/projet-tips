@@ -2,7 +2,8 @@
 
 ### Make new user and install all the packeges
 ```
-pip install python3 python3-dev python3-venv -y
+sudo apt-get update
+sudo apt-get install python3 python3-dev python3-venv -y
 ```
 
 ### Install mysql packeges
