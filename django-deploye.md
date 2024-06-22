@@ -50,14 +50,13 @@ sudo ufw allow 8000
 
 ## Using NGINX and GUNICORN
 
-### Install nginx
-```
-sudo apt-get install nginx
-```
-
 ### Install gunicorn
 ```
 pip install gunicorn
+```
+### Run With gunicorn
+```
+gunicorn --workers 3 --bind 0.0.0.0:8000 test_django.wsgi:application
 ```
 
 ### Make socket file for gunicorn
@@ -120,6 +119,11 @@ sudo systemctl status gunicorn.service
 ### For test 
 ```
 curl --unix-socket /run/gunicorn.sock http://localhost
+```
+
+### Install nginx
+```
+sudo apt-get install nginx
 ```
 
 ### Ngnix 
