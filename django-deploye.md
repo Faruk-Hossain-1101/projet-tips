@@ -120,6 +120,10 @@ sudo systemctl status gunicorn.service
 ```
 curl --unix-socket /run/gunicorn.sock http://localhost
 ```
+### Disable ufw
+```
+sudo ufw disable
+```
 
 ### Install nginx
 ```
