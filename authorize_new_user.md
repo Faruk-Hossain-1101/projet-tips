@@ -10,12 +10,13 @@ ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_test
 ```
 sudo cat  .ssh/id_test.pub
 ```
-### Get the private key and copy for next step
-```
-sudo cat  .ssh/id_test
-```
 ### Create a new authorization file 
 ```
 sudo nano .ssh/authorized_keys
 ```
+### Get the private key and copy for next step
+```
+sudo cat  .ssh/id_test
+```
+
 ### Past the private keys and exit
