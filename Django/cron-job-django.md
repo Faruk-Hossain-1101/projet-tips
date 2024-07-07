@@ -3,6 +3,7 @@
 create a commands module on management/commands/name.py
 ```
 ```
+from django.core.management.base import BaseCommand
 class Command(BaseCommand):
     help="Simple cron jobs"
     def handle(self, *args, **options):
