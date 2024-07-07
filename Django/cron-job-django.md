@@ -2,6 +2,12 @@
 ```
 create a commands module on management/commands/name.py
 ```
+```
+class Command(BaseCommand):
+    help="Simple cron jobs"
+    def handle(self, *args, **options):
+        self.stdout.write("Hello from custom command!")
+```
 
 ### Cron Jobs 
 1. Create a task/command
