@@ -120,6 +120,10 @@ sudo systemctl status gunicorn.service
 ```
 curl --unix-socket /run/gunicorn.sock http://localhost
 ```
+### Disable ufw
+```
+sudo ufw disable
+```
 
 ### Install nginx
 ```
@@ -132,24 +136,23 @@ sudo nano /etc/nginx/sites-available/your_project_name
 ```
 ```
 server {
-    listen 80;
-    server_name your_domain.com;
+        listen 80;
+        server_name _;
 
-    location / {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
 
-    location /static/ {
-        alias /path/to/static/files;  # Update this with the path to your static files
-    }
+        location /static {
+                autoindex on;
+                alias /static/file/path;
+        }
 
-    location /media/ {
-        alias /path/to/media/files;  # Update this with the path to your media files
-    }
+        location / {
+                proxy_pass http://unix:/run/gunicorn.sock;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
 }
+
 ```
 ### enable
 ```
