@@ -1,15 +1,3 @@
-### How we can create a commands in django
-```
-create a commands module on management/commands/name.py
-```
-```
-from django.core.management.base import BaseCommand
-class Command(BaseCommand):
-    help="Simple cron jobs"
-    def handle(self, *args, **options):
-        self.stdout.write("Hello from custom command!")
-```
-
 ### Cron Jobs 
 1. Create a task/command
 2. Install django-crontab module
