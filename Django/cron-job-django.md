@@ -14,7 +14,7 @@ INSTALLED_APPS = [
 4. Define Cron Jobs in Settings
 ```
 CRONJOBS = [
-    ('0 0 * * *', 'your_app.management.commands.my_cron_job.Command'),
+    ('0 0 * * *', 'your_app.module.function_to_run'),
 ]
 ```
 5. Add and Remove Cron Jobs
